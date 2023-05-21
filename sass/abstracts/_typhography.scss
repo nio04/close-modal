@@ -1,0 +1,17 @@
+@use "../abstracts/var";
+
+.main-header-typo {
+  font-size: 5rem;
+  text-transform: uppercase;
+  word-spacing: 0.6rem;
+  letter-spacing: 0.3rem;
+  color: var.$color-secondary;
+  border: 0.4rem solid rgba(0, 0, 0, 0.552);
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.671),
+    rgba(255, 255, 255, 0.595)
+  );
+  box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.552);
+  text-shadow: 10px 5px 10px rgba(59, 54, 54, 0.963);
+}

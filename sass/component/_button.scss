@@ -1,0 +1,31 @@
+@use "../abstracts/var";
+
+.btn-red {
+  background-color: red;
+  color: white;
+  font-size: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.6rem;
+  word-spacing: 0.6rem;
+  border: none;
+  border: 0.4rem solid white;
+  transition: all 0.4s;
+  cursor: pointer;
+
+  &:active {
+    outline: none;
+    background-color: rgba(240, 248, 255, 0.508);
+    color: rgba(0, 0, 0, 0.715);
+    border-radius: 2rem;
+  }
+
+  @media only screen and (max-width: var.$bp-medium) {
+    letter-spacing: 0.3rem;
+    word-spacing: 0.3rem;
+    font-size: 3.1rem;
+  }
+
+  @media only screen and (max-width: var.$bp-small) {
+    padding: 3rem;
+  }
+}

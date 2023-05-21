@@ -1,0 +1,55 @@
+@use "../abstracts/var";
+@use "../abstracts/mixins" as mixin;
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; //10px = 1rem (1200px--1800px)
+
+  // @media only screen and (max-width: var.$bp-largest) {
+  //   font-size: 53%; //1220px [8.5px = 1rem]
+  // }
+
+  // @media only screen and (max-width: var.$bp-large) {
+  //   font-size: 43%; //1050  [7px = 1rem]
+  // }
+
+  // @media only screen and (max-width: var.$bp-medium) {
+  //   font-size: 40%; //850px  [6.4px = 1rem]
+  // }
+
+  @include mixin.respond(big-desk) {
+    font-size: 75%; //1rem = 12px
+  }
+
+  @include mixin.respond(tab-land) {
+    font-size: 56%; //1rem = 9px
+  }
+
+  @include mixin.respond(tab-port) {
+    font-size: 50%; //1rem = 8px
+  }
+
+  @include mixin.respond(mobile) {
+    font-size: 37%; //1rem = 6px
+  }
+}
+
+body {
+  background-image: linear-gradient(
+    to right bottom,
+    var.$color-primary,
+    var.$color-secondary
+  );
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  padding: 3rem;
+
+  position: relative;
+}

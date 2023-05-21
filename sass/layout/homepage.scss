@@ -1,0 +1,78 @@
+@use "../abstracts/var";
+@use "../abstracts/utilities";
+@use "../abstracts/typhography";
+@use "../base/reset";
+@use "../component/button";
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 10rem 15rem 1fr;
+  gap: 3rem;
+
+  header {
+    grid-column: 1 / -1;
+
+    @extend .center-me;
+
+    @extend .main-header-typo;
+  }
+  .open-modals {
+    grid-column: 1 / -1;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    @media only screen and (max-width: var.$bp-small) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, 1fr);
+      grid-row-gap: 2rem;
+    }
+    button {
+      @extend .btn-red;
+    }
+  }
+  .show-story {
+    position: absolute;
+    top: 10rem;
+    left: 4rem;
+    right: 4rem;
+    z-index: 10;
+    header {
+      @extend .main-header-typo;
+      background-color: #fff;
+      padding-left: 1em;
+      display: flex;
+
+      span {
+        margin-left: auto;
+        color: red;
+        padding-right: 3rem;
+        cursor: pointer;
+      }
+    }
+    p {
+      font-size: 3rem;
+      line-height: 6.9rem;
+      background-color: var.$color-secondary;
+      padding: 3rem;
+
+      @media only screen and (max-width: var.$bp-small) {
+        line-height: 5.5rem;
+      }
+    }
+  }
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+    z-index: 5;
+  }
+  .hidden {
+    display: none;
+  }
+}
